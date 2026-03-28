@@ -1,51 +1,112 @@
-# Student-Task-Tracker-Contract
-# Title
-Student Task Tracker Contract
+# 🎓 Student Task Tracker Contract
 
-# Description
-Đây là một dự án smart contract được xây dựng trên nền tảng Stellar Soroban nhằm hỗ trợ người dùng quản lý một công việc học tập hoặc nhiệm vụ cá nhân đơn giản trên blockchain.
+A decentralized task management smart contract built on Stellar Blockchain using Soroban Smart Contracts.
 
-Dự án cho phép người dùng tạo một task, xem lại task hiện tại, đánh dấu task đã hoàn thành và reset lại trạng thái khi muốn bắt đầu một nhiệm vụ mới.
+---
 
-Mục đích của dự án là thực hành quy trình phát triển smart contract trên Stellar, bao gồm:
-- viết contract bằng Rust
-- build contract sang WASM
-- deploy contract lên Stellar testnet
-- tương tác với contract bằng Stellar CLI
+## 📖 Description
 
-Ý tưởng này được chọn vì mang tính thực tế hơn so với ví dụ lưu câu chào đơn giản. Việc quản lý task là nhu cầu gần gũi với sinh viên, người học hoặc người làm việc cá nhân. Dự án vừa đủ đơn giản để dễ triển khai, nhưng vẫn thể hiện rõ cách lưu trữ và cập nhật dữ liệu trên blockchain.
+Student Task Tracker Contract is a simple decentralized application (dApp) built on the Stellar blockchain to help users store and manage a study task or personal task directly on-chain.
 
-# Tính năng
-- Tạo hoặc cập nhật một công việc mới
-- Xem công việc hiện tại đang được lưu
-- Đánh dấu công việc là đã hoàn thành
-- Kiểm tra trạng thái hoàn thành của công việc
-- Reset dữ liệu để bắt đầu lại từ đầu
-- Tương tác trực tiếp với smart contract trên Stellar testnet
+### The Problem
 
-# Contract
-Link contract:  
-https://stellar.expert/explorer/testnet/contract/CAX72JBBXQSZUOHBOJ44M2AYJ3YDITWHZTQSPY5O4QFLOPY7XSZAYLKL
+Students often need to keep track of assignments, reports, projects, and daily study goals. Traditional note-taking tools are useful, but they can be edited, deleted, or lost, and they do not provide a transparent way to track task progress.
 
-Ảnh chụp màn hình contract:  
-<img width="1024" height="666" alt="Ảnh màn hình 2026-03-27 lúc 22 35 26" src="https://github.com/user-attachments/assets/8144be18-e652-45a0-b194-4877e29e8578" />
+### The Solution
 
-# Future scopes
-Trong tương lai, dự án có thể được mở rộng theo nhiều hướng thực tế hơn như:
+By storing a task on-chain through a Soroban smart contract, this system ensures that:
 
-- Quản lý nhiều task thay vì chỉ một task duy nhất
-- Lưu danh sách task theo từng người dùng hoặc từng địa chỉ ví
-- Thêm thời gian tạo task và thời hạn hoàn thành
-- Phân loại task theo mức độ ưu tiên
-- Xây dựng giao diện frontend để người dùng thao tác trực quan
-- Kết nối ví Stellar để mỗi người dùng quản lý dữ liệu riêng
-- Phát triển thành một ứng dụng quản lý học tập phi tập trung trên Web3
+- The current task is stored transparently on the blockchain
+- Users can check their current task anytime
+- The completion status is managed clearly through the contract
+- The task can be reset to start a new one
+- The project demonstrates how blockchain can be used for simple productivity tools
 
-Về lâu dài, mình muốn phát triển ý tưởng này thành một công cụ hỗ trợ học tập cá nhân trên blockchain, nơi người dùng có thể theo dõi tiến độ công việc, lưu lịch sử hoàn thành task và tạo động lực học tập thông qua hệ thống minh bạch, không thể chỉnh sửa tùy ý.
+### Why Stellar?
 
-# Profile
-- Họ và tên: [Võ Bá Quốc Đạt]
-- Vai trò: Sinh viên / Người học blockchain
-- Kỹ năng: Rust cơ bản, Stellar Soroban, Stellar CLI, smart contract cơ bản
-- Mục tiêu: Học cách xây dựng, deploy và tương tác với smart contract trên Stellar
-- Sở thích: Blockchain, Web3, lập trình smart contract, công nghệ phi tập trung
+Stellar was chosen because it offers fast transaction finality, very low transaction fees, and support for Soroban smart contracts. These features make it a strong platform for building lightweight and practical blockchain applications.
+
+---
+
+## ✨ Features
+
+### 📝 Set Task
+- Users can create or update a new task
+- When a new task is created, the completion status is automatically reset to `false`
+
+### 📋 Get Task
+- Users can view the current task stored in the contract
+- If no task has been created yet, the contract returns `"No task yet"`
+
+### ✅ Complete Task
+- Users can mark the current task as completed
+- The contract updates the status to `true`
+
+### 🔍 Get Status
+- Users can check whether the current task is completed
+- Returns `true` or `false`
+
+### 🔄 Reset Task
+- Resets the task to its default state
+- After reset, the task becomes `"No task yet"` and the completion status becomes `false`
+
+### 🧪 Contract Testing
+- The contract was successfully tested using `cargo test`
+- Test result: `1 passed, 0 failed`
+
+---
+
+## 📄 Contract
+
+**Network:** Stellar Testnet
+
+**Contract Address:**
+
+`CAX72JBBXQSZUOHBOJ44M2AYJ3YDITWHZTQSPY5O4QFLOPY7XSZAYLKL`
+
+🔍 **View on Stellar Expert:**  
+[https://stellar.expert/explorer/testnet/contract/CAX72JBBXQSZUOHBOJ44M2AYJ3YDITWHZTQSPY5O4QFLOPY7XSZAYLKL](https://stellar.expert/explorer/testnet/contract/CAX72JBBXQSZUOHBOJ44M2AYJ3YDITWHZTQSPY5O4QFLOPY7XSZAYLKL)
+
+---
+
+## 📸 Contract Screenshot
+
+<img width="1024" height="666" alt="Ảnh màn hình 2026-03-27 lúc 22 35 26" src="https://github.com/user-attachments/assets/8144be18-e652-45a0-b194-4877e29e8578" />
+
+---
+
+## 🚀 Future Scopes
+
+This project was built as a simple educational smart contract, but it can be expanded in many practical directions in the future.
+
+### Short-term
+- Support multiple tasks instead of only one
+- Add task creation timestamps
+- Add task priority levels
+- Keep a history of completed tasks
+
+### Mid-term
+- Connect with Stellar wallets so each user can manage their own tasks
+- Build a frontend dApp for a better user experience
+- Organize tasks by subject, project, or category
+
+### Long-term
+- Develop it into a decentralized study management platform
+- Add a reward or point system for completed tasks
+- Build a transparent on-chain productivity tool for students
+
+The long-term goal is to create a simple but meaningful on-chain learning assistant where students can track their study progress in a transparent and decentralized way.
+
+---
+
+## 👤 Profile
+
+| Field | Information |
+|-------|-------------|
+| Name | Vo Ba Quoc Dat |
+| ID | 113400 |
+| School | Dong A University |
+| Major | Information Technology — Blockchain |
+| Year | 1rd Year |
+
+Built with ❤️ at Stellar Blockchain Workshop · Powered by Soroban Smart Contracts
