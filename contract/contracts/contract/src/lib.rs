@@ -49,7 +49,7 @@ impl Contract {
         env.storage().instance().set(&STATUS_KEY, &false);
     }
 }
-// Tạo task mới
+/*/ Tạo task mới
 stellar contract invoke \
 --id CAX72JBBXQSZUOHBOJ44M2AYJ3YDITWHZTQSPY5O4QFLOPY7XSZAYLKL \
 --source-account student \
@@ -96,4 +96,4 @@ stellar contract invoke \
 --source-account student \
 --network testnet \
 --send=yes \
--- get_task \
+-- get_task *\
